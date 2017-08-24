@@ -9,6 +9,6 @@ CREATE TABLE bro (
   age INTEGER(100) NULL,
   height_inches INTEGER(100) NULL,
   weight DECIMAL(10,1) NULL,
-  photo BLOB NULL,
+  photo TEXT NULL,
   PRIMARY KEY (id)
 );
