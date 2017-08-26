@@ -1,8 +1,8 @@
 $(document).ready(function() {
   /* global moment */
   // blogContainer holds all of our posts
-  var blogContainer = $(".blog-container");
-  var postCategorySelect = $("#category");
+  var usersContainer = $(".users-container");
+  var CategorySelect = $("#category");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
