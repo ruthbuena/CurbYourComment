@@ -1,0 +1,29 @@
+button.submit {
+  float: right;
+}
+
+form#create {
+  margin-top: 50px;
+}
+
+#create textarea {
+  resize: none;
+}
+
+.panel-heading button.delete,
+button.edit {
+  float: right;
+  margin: 5px;
+}
+
+.top-30 {
+  margin-top: 30px;
+}
+
+form#update {
+  margin-top: 50px;
+}
+
+#update textarea {
+  resize: none;
+}
