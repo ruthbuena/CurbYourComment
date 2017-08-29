@@ -1,22 +1,27 @@
 const
   mysql = require('mysql'),
-
   bodyParser = require('body-parser'),
-
   Sequelize = require('sequelize'),
-
-  connection = mysql.createConnection({
-    database: 'brocial_networkDB',
-    Host: 'localhost',
-    user: 'root',
-    password: 'root',
-    port: 3306,
-  }),
-
   express = require('express'),
   path = require('path'),
+
+  // connection = mysql.createConnection({
+  //   database: 'brocial_networkDB',
+  //   Host: 'localhost',
+  //   user: 'root',
+  //   password: 'root',
+  //   port: 3306,
+  // }),
+
+
   app = express(),
-  PORT = process.env.PORT || 8080;
+  PORT = process.env.PORT || 8080,
+
+  sequelize = new Sequelize('brocial_networkDB', 'root', 'root', {
+    host: 'localhost',
+    dialect: 'mysql',
+    port: 3306
+  });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
