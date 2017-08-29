@@ -4,24 +4,9 @@ const
   Sequelize = require('sequelize'),
   express = require('express'),
   path = require('path'),
-
-  // connection = mysql.createConnection({
-  //   database: 'brocial_networkDB',
-  //   Host: 'localhost',
-  //   user: 'root',
-  //   password: 'root',
-  //   port: 3306,
-  // }),
-
-
   app = express(),
   PORT = process.env.PORT || 8080,
-
-  sequelize = new Sequelize('brocial_networkDB', 'root', 'root', {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306
-  });
+  db = require('./models');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -32,6 +17,10 @@ app.use(bodyParser.json({
   type: "application/vnd.api+json"
 }));
 
-app.listen(PORT, function() {
-  console.log("server is listening on PORT: " + PORT);
+db.sequelize.sync({
+  force: true
+}).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });

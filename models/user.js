@@ -1,35 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('user' {
-    id: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    }
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    height_inches: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 'n/a'
-    },
-    weight: {
-      type: DataTypes.DECIMAL,
-      allowNull: true,
-      defaultValue: 'n/a'
-    },
-    photo: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: 'some link'
-    },
-  });
-
-  var Account = sequelize.define('account' {
+  var User = sequelize.define('User', {
     id: {
       type: DataTypes.STRING,
       primaryKey: true
@@ -42,6 +12,31 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    height_inches: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    weight: {
+      type: DataTypes.DECIMAL,
+      allowNull: true,
+      defaultValue: 0
+    },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'some link'
+    },
+  }, {
     timestamps: true
   });
-}
+  return User;
+};
