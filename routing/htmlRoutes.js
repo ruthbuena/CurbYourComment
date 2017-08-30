@@ -1,4 +1,5 @@
-const express = require('express'),
+const
+  express = require('express'),
   path = require('path'),
   app = express();
 
@@ -8,8 +9,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, '../public/home.html'))
   });
 
-  app.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/loginCreate.html'))
-  });
+  // app.get('/login', function(req, res) {
+  //   res.sendFile(path.join(__dirname, '../public/loginCreate.html'))
+  // });
 
 };
