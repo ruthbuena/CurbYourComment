@@ -16,24 +16,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    height_inches: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0
-    },
-    weight: {
-      type: DataTypes.DECIMAL,
-      allowNull: true,
-      defaultValue: 0
-    },
-    photo: {
+    email: {
       type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: 'some link'
+      allowNull: false,
     },
   }, {
     timestamps: true
