@@ -13,7 +13,7 @@ $(document).ready(function() {
   }
 
   // Getting jQuery references to the post body, title, form, and category select
-  var signupForm = $("#cms");
+  var signupForm = $("sign-up");
   var usernameInput = $("#user-name");
   var passwordInput = $("#password");
   var nameInput = $("#name");
