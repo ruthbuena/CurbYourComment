@@ -21,6 +21,7 @@ app.use(express.static('public'));
 
 require('./routing/apiRoutes.js')(app);
 require('./routing/htmlRoutes.js')(app);
+require('./routing/postRoutes.js')(app);
 
 db.sequelize.sync({
   force: true
