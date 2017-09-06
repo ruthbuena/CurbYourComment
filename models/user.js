@@ -1,8 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     id: {
-      type: DataTypes.STRING,
-      primaryKey: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
     username: {
       type: DataTypes.STRING,
@@ -19,9 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-  }, {
-    timestamps: true
+    }
   });
   return User;
 };

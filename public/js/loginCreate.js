@@ -11,21 +11,22 @@ $(document).ready(function() {
   //   postId = url.split("=")[1];
   //   getPostData(postId);
   // }
-  var url = window.location.origin;
-  // Getting jQuery references to the post body, title, form, and category select
-  var form = $("#sign-up"),
-    usernameInput = $("#user-name"),
-    passwordInput = $("#password"),
-    confirmPasswordInput = $('#confirmPassword'),
-    nameInput = $("#name"),
-    emailInput = $("#email");
 
   // Giving the postCategorySelect a default value
   // Adding an event listener for when the form is submitted
+  var form = $("#sign-up");
 
   $(form).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing a body or a title
+    var url = window.location.origin;
+    // Getting jQuery references to the post body, title, form, and category select
+
+    var usernameInput = $("#user-name"),
+      passwordInput = $("#password"),
+      confirmPasswordInput = $('#confirmPassword'),
+      nameInput = $("#name"),
+      emailInput = $("#email");
 
     // Constructing a newPost object to hand to the database
     var newUser = {
@@ -36,13 +37,7 @@ $(document).ready(function() {
       email: emailInput.val().trim()
     };
 
-    validateData()
-
-    function addNewUser() {
-      $.post(url + '/api/users', newUser, function(data) {
-        console.log('new user added');
-      });
-    };
+    validateData();
 
     // console.log(newUser);
     function validateData() {
@@ -51,7 +46,13 @@ $(document).ready(function() {
       } else if (newUser.password !== newUser.confirmPassword) {
         alert('Your passwords don\'t match!');
       } else {
-        addNewUser();
+        console.log(newUser);
+        // $.get('/api/users', function(data) {
+        //   res.json(data);
+        // });
+        $.post('/api/users', newUser, function(req, res) {
+          console.log('new user added');
+        });
       };
     };
   });
