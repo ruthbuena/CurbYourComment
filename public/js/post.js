@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and user select
   // var bodyInput = $("#body");
   // var titleInput = $("#title");
-  var form = $("#sign-up");
+  var form = $("#blog");
 
 
   $(form).on("submit", function handleFormSubmit(event){
@@ -16,8 +16,8 @@ $(document).ready(function() {
   // Constructing a newPost object to hand to the database
   var newPost = {
     title: titleInput.val().trim(),
-    body: bodyInput.val().trim(),
-    userId: userSelect.val()
+    body: bodyInput.val().trim()
+    // userId: userSelect.val()
   };
 
   submitPost();
