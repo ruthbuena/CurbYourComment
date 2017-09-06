@@ -17,6 +17,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, '../public/signup.html'))
   });
 
+  // blog route loads blog.html
+  app.get("/blog", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  });
+
   app.get('/post', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/post.html'))
   });

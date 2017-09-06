@@ -23,9 +23,10 @@ $(document).ready(function() {
   submitPost();
 
   // Submits a new post and brings user to blog page upon completion
-  function submitPost() {
-    $.post('/api/posts', newPost, function(req,res) {
+  function submitPost(post) {
+    $.post('/api/posts', post, function() {
         console.log('new post added');
+        window.location.href = '/blog';
     });
   }
 });
