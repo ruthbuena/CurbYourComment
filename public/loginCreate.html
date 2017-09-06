@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="col-md-6 col-md-offset-3">
-        <form id="sign-up">
+        <form action='/api/users' id="sign-up" method='post'>
           <div class="form-group">
             <label for="username">User Name:</label>
             <input type="text" class="form-control" id="user-name">
@@ -38,7 +38,7 @@
             <input type="text" class="form-control" id="email">
             <br />
 
-            <button type="submit" class="btn btn-success submit">Submit</button>
+            <input id='submitButton' type="submit" class="btn btn-success submit">
           </div>
         </form>
       </div>

@@ -1,12 +1,12 @@
 const
-  // mysql = require('mysql'),
   bodyParser = require('body-parser'),
   Sequelize = require('sequelize'),
   express = require('express'),
   path = require('path'),
   app = express(),
-  PORT = process.env.PORT || 8080,
-  db = require('./models');
+  PORT = process.env.PORT || 8080;
+
+var db = require('./models');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -19,8 +19,8 @@ app.use(bodyParser.json({
 
 app.use(express.static('public'));
 
+require('./routing/apiRoutes.js')(app);
 require('./routing/htmlRoutes.js')(app);
-// require('./routing/apiRoutes.js')(app);
 
 db.sequelize.sync({
   force: true
