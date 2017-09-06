@@ -26,7 +26,7 @@ $(document).ready(function() {
   function submitPost(post) {
     $.post('/api/posts', post, function() {
         console.log('new post added');
-        window.location.href = '/blog';
+        // window.location.href = '/blog';
     });
   }
 });
