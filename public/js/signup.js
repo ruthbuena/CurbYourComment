@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     validateData();
 
-    // console.log(newUser);
+
     function validateData() {
       if (!newUser.username || !newUser.password || !newUser.confirmPassword || !newUser.name || !newUser.email) {
         alert('All fields are required. Please fill out accordingly.');
@@ -47,11 +47,13 @@ $(document).ready(function() {
         alert('Your passwords don\'t match!');
       } else {
         console.log(newUser);
-        // $.get('/api/users', function(data) {
-        //   res.json(data);
-        // });
         $.post('/api/users', newUser, function(req, res) {
           console.log('new user added');
+          $(usernameInput).val('');
+          $(passwordInput).val('');
+          $(confirmPasswordInput).val('');
+          $(nameInput).val('');
+          $(emailInput).val('');
         });
       };
     };

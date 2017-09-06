@@ -38,14 +38,32 @@
             <input type="text" class="form-control" id="email">
             <br />
 
-            <input id='submitButton' type="submit" class="btn btn-success submit">
+            <input data-toggle="modal" data-target='#myModal' id='submitButton' type="submit" class="btn btn-success submit">
           </div>
         </form>
       </div>
     </div>
   </div>
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Thank you for joining!</h4>
+        </div>
+        <div class="modal-body">
+          Something
+        </div>
+        <div class="modal-footer">
+          <button href='/something' type="button" class="btn btn-default" data-dismiss="modal">Continue to Site</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Custom Script -->
-  <script src="js/loginCreate.js" type="text/javascript"></script>
+  <script src="js/signup.js" type="text/javascript"></script>
 </body>
 
 </html>
