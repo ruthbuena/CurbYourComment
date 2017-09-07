@@ -43,6 +43,17 @@ module.exports = function(app) {
     });
   });
 
+  app.delete("/api/users/:id", function(req, res) {
+    db.User.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
+
   app.put("/api/posts", function(req, res) {
     console.log('asdf');
     db.Post.update(
@@ -84,16 +95,7 @@ module.exports = function(app) {
 
 
 // DELETE route for deleting users
-// app.delete("/api/users/:id", function(req, res) {
-//   db.User.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   })
-//   .then(function(dbUser) {
-//     res.json(dbUser);
-//   });
-// });
+
 //
 // // PUT route for updating users
 // app.put("/api/users", function(req, res) {
