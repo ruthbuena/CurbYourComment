@@ -48,6 +48,7 @@ $(document).ready(function() {
         console.log(newUser);
         $.post('/api/users', newUser, function(req, res) {
           console.log('new user added');
+          // window.location.href = '/post';
           $(usernameInput).val('');
           $(passwordInput).val('');
           $(confirmPasswordInput).val('');

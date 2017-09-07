@@ -22,6 +22,7 @@ $(document).ready(function() {
 
     submitPost();
 
+
     // Submits a new post and brings user to blog page upon completion
     function submitPost(post) {
 
@@ -35,6 +36,7 @@ $(document).ready(function() {
 
     };
   });
+
 });
 
 // // Adding an event listener for when the form is submitted
