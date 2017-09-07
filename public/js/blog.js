@@ -5,8 +5,13 @@ $(document).ready(function() {
   var blogContainer = $(".blog-container");
   var postCategorySelect = $("#category");
   // Click events for the edit and delete buttons
+<<<<<<< HEAD
   $(document).on("click", "button.delete", handlePostDelete);
   $("button.edit").on("click", event.preventDefault, handlePostEdit);
+=======
+  // $(document).on("click", "button.delete", handlePostDelete);
+  $(document).on("click", "button.edit", handlePostEdit);
+>>>>>>> master
   // Variable to hold our posts
   var posts;
 
@@ -42,15 +47,15 @@ $(document).ready(function() {
   }
 
   // This function does an API call to delete posts
-  function deletePost(id) {
-    $.ajax({
-        method: "DELETE",
-        url: "/api/posts/" + id
-      })
-      .done(function() {
-        getPosts(postCategorySelect.val());
-      });
-  }
+  // function deletePost(id) {
+  //   $.ajax({
+  //       method: "DELETE",
+  //       url: "/api/posts/" + id
+  //     })
+  //     .done(function() {
+  //       getPosts(postCategorySelect.val());
+  //     });
+  // }
 
   // InitializeRows handles appending all of our constructed post HTML inside blogContainer
   function initializeRows() {
@@ -70,21 +75,21 @@ $(document).ready(function() {
     newPostPanel.addClass("panel panel-default");
     var newPostPanelHeading = $("<div>");
     newPostPanelHeading.addClass("panel-heading");
-    var deleteBtn = $("<button>");
-    deleteBtn.text("x");
-    deleteBtn.addClass("delete btn btn-danger");
+    // var deleteBtn = $("<button>");
+    // deleteBtn.text("x");
+    // deleteBtn.addClass("delete btn btn-danger");
     var editBtn = $("<button>");
-    editBtn.text("EDIT");
-    editBtn.addClass("edit btn btn-info");
+    // editBtn.text("EDIT");
+    // editBtn.addClass("edit btn btn-info");
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostuser = $("<h5>");
-    newPostuser.text("Written by: user name display is in next activity when we learn joins!");
-    newPostuser.css({
-      float: "right",
-      color: "blue",
-      "margin-top": "-10px"
-    });
+    // newPostuser.text("Written by: user name display is in next activity when we learn joins!");
+    // newPostuser.css({
+    //   float: "right",
+    //   color: "blue",
+    //   "margin-top": "-10px"
+    // });
     var newPostPanelBody = $("<div>");
     newPostPanelBody.addClass("panel-body");
     var newPostBody = $("<p>");
@@ -92,7 +97,7 @@ $(document).ready(function() {
     newPostBody.text(post.body);
     newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
-    newPostPanelHeading.append(deleteBtn);
+    // newPostPanelHeading.append(deleteBtn);
     newPostPanelHeading.append(editBtn);
     newPostPanelHeading.append(newPostTitle);
     newPostPanelHeading.append(newPostuser);
@@ -104,13 +109,13 @@ $(document).ready(function() {
   }
 
   // This function figures out which post we want to delete and then calls deletePost
-  function handlePostDelete() {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-    deletePost(currentPost.id);
-  }
+  // function handlePostDelete() {
+  //   var currentPost = $(this)
+  //     .parent()
+  //     .parent()
+  //     .data("post");
+  //   deletePost(currentPost.id);
+  // }
 
   // This function figures out which post we want to edit and takes it to the appropriate url
   function handlePostEdit() {
