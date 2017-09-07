@@ -5,13 +5,9 @@ $(document).ready(function() {
   var blogContainer = $(".blog-container");
   var postCategorySelect = $("#category");
   // Click events for the edit and delete buttons
-<<<<<<< HEAD
   $(document).on("click", "button.delete", handlePostDelete);
   $("button.edit").on("click", event.preventDefault, handlePostEdit);
-=======
   // $(document).on("click", "button.delete", handlePostDelete);
-  $(document).on("click", "button.edit", handlePostEdit);
->>>>>>> master
   // Variable to hold our posts
   var posts;
 
