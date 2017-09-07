@@ -13,5 +13,14 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     }
   });
+
+  Post.associate = function(models) {
+      Post.belongsTo(models.User, {
+        // foreignKey: {
+        //   allowNull: false
+        // }
+      });
+    };
+
   return Post;
 };
