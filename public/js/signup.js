@@ -17,51 +17,59 @@ $(document).ready(function() {
   var form = $("#sign-up");
 
   $(form).on("submit", function handleFormSubmit(event) {
-    event.preventDefault();
-    // Wont submit the post if we are missing a body or a title
-    var url = window.location.origin;
-    // Getting jQuery references to the post body, title, form, and category select
 
+    event.preventDefault();
+
+    var url = window.location.origin;
+
+    // Getting jQuery references to the post body, title, form, and category select
     var usernameInput = $("#user-name"),
       passwordInput = $("#password"),
       confirmPasswordInput = $('#confirmPassword'),
       nameInput = $("#name"),
-      emailInput = $("#email");
+      emailInput = $("#email"),
 
-    // Constructing a newPost object to hand to the database
-    var newUser = {
-      username: usernameInput.val().trim(),
-      password: passwordInput.val().trim(),
-      confirmPassword: confirmPasswordInput.val().trim(),
-      name: nameInput.val().trim(),
-      email: emailInput.val().trim()
-    };
-
-    validateData();
-
-    function validateData() {
-      if (!newUser.username || !newUser.password || !newUser.confirmPassword || !newUser.name || !newUser.email) {
-        alert('All fields are required. Please fill out accordingly.');
-      } else if (newUser.password !== newUser.confirmPassword) {
-        alert('Your passwords don\'t match!');
-      } else {
-        console.log(newUser);
-        $.post('/api/users', newUser, function(req, res) {
-          console.log('new user added');
-          // window.location.href = '/post';
-          $(usernameInput).val('');
-          $(passwordInput).val('');
-          $(confirmPasswordInput).val('');
-          $(nameInput).val('');
-          $(emailInput).val('');
-          $('#myModal').modal('toggle');
-          // window.location.href = "/blog";
-        });
-        $('#continueToSite').on('click', function() {
-          window.location.href = '/blog';
-        });
+      // new user object outlining user inputted properties
+      newUser = {
+        username: usernameInput.val().trim(),
+        password: passwordInput.val().trim(),
+        confirmPassword: confirmPasswordInput.val().trim(),
+        name: nameInput.val().trim(),
+        email: emailInput.val().trim()
       };
+
+    // long if then statement, making sure passwords match and no fields were left uncompleted before posting the data
+    function validateNewUserData() {
+      !newUser.username || !newUser.password || !newUser.confirmPassword || !newUser.name || !newUser.email ?
+        alert('All fields are required. Please fill out accordingly.') :
+        newUser.password !== newUser.confirmPassword ? alert('Your passwords don\'t match!') : postNewUserData();
     };
+
+    // posts the data
+    function postNewUserData() {
+      console.log(newUser);
+      $.post('/api/users', newUser, function(req, res) {
+        console.log('new user added');
+
+        // clears inputs once posted
+        $(usernameInput).val('');
+        $(passwordInput).val('');
+        $(confirmPasswordInput).val('');
+        $(nameInput).val('');
+        $(emailInput).val('');
+
+        // toggles modal (obviously)
+        $('#myModal').modal('toggle');
+      });
+
+      // leads user to blog page once they finished signing up
+      $('#continueToSite').on('click', function() {
+        window.location.href = '/blog';
+      });
+    };
+
+    validateNewUserData();
+
   });
 });
 

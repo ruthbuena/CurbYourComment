@@ -35,8 +35,7 @@ $(document).ready(function() {
       posts = data;
       if (!posts || !posts.length) {
         displayEmpty(user);
-      }
-      else {
+      } else {
         initializeRows();
       }
     });
@@ -45,12 +44,12 @@ $(document).ready(function() {
   // This function does an API call to delete posts
   function deletePost(id) {
     $.ajax({
-      method: "DELETE",
-      url: "/api/posts/" + id
-    })
-    .done(function() {
-      getPosts(postCategorySelect.val());
-    });
+        method: "DELETE",
+        url: "/api/posts/" + id
+      })
+      .done(function() {
+        getPosts(postCategorySelect.val());
+      });
   }
 
   // InitializeRows handles appending all of our constructed post HTML inside blogContainer
@@ -84,8 +83,7 @@ $(document).ready(function() {
     newPostuser.css({
       float: "right",
       color: "blue",
-      "margin-top":
-      "-10px"
+      "margin-top": "-10px"
     });
     var newPostPanelBody = $("<div>");
     newPostPanelBody.addClass("panel-body");
@@ -132,9 +130,12 @@ $(document).ready(function() {
     }
     blogContainer.empty();
     var messageh2 = $("<h2>");
-    messageh2.css({ "text-align": "center", "margin-top": "50px" });
+    messageh2.css({
+      "text-align": "center",
+      "margin-top": "50px"
+    });
     messageh2.html("No posts yet" + partial + ", click <a href='/post" + query +
-    "'>here</a> to add a post.");
+      "'>here</a> to add a post.");
     blogContainer.append(messageh2);
   }
 
