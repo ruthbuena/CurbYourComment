@@ -4,7 +4,7 @@
   "description": "Group Project 2",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
