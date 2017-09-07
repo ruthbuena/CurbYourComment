@@ -6,7 +6,7 @@ $(document).ready(function() {
   var postCategorySelect = $("#category");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
-  $(document).on("click", "button.edit", handlePostEdit);
+  $("button.edit").on("click", event.preventDefault, handlePostEdit);
   // Variable to hold our posts
   var posts;
 
@@ -114,10 +114,12 @@ $(document).ready(function() {
 
   // This function figures out which post we want to edit and takes it to the appropriate url
   function handlePostEdit() {
+    event.preventDefault;
     var currentPost = $(this)
       .parent()
       .parent()
       .data("post");
+    console.log(this);
     window.location.href = "/blog?post_id=" + currentPost.id;
   }
 

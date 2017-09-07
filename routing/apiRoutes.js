@@ -1,6 +1,5 @@
 // Requiring our Todo model
 var db = require('../models');
-// var User = require("../models/user.js");
 
 // Routes
 // =============================================================
@@ -41,6 +40,18 @@ module.exports = function(app) {
       body: req.body.body
     }).then(function(results) {
       res.end();
+    });
+  });
+
+  app.put("/api/posts", function(req, res) {
+    console.log('asdf');
+    db.Post.update(
+      req.body, {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbPost) {
+      res.json(dbPost);
     });
   });
 
