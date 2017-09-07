@@ -39,7 +39,6 @@ $(document).ready(function() {
 
     validateData();
 
-
     function validateData() {
       if (!newUser.username || !newUser.password || !newUser.confirmPassword || !newUser.name || !newUser.email) {
         alert('All fields are required. Please fill out accordingly.');
@@ -54,6 +53,11 @@ $(document).ready(function() {
           $(confirmPasswordInput).val('');
           $(nameInput).val('');
           $(emailInput).val('');
+          $('#myModal').modal('toggle');
+          // window.location.href = "/blog";
+        });
+        $('#continueToSite').on('click', function() {
+          window.location.href = '/blog';
         });
       };
     };
