@@ -31,11 +31,19 @@ module.exports = function(app) {
       email: req.body.email
     }).then(function(results) {
       res.end();
-    })
-    // .then(function(dbUser) {
-    //   res.json(dbUser);
-    // });
+    });
   });
+
+  app.post('/api/posts', function(req, res) {
+    console.log(req.body);
+    db.Post.create({
+      title: req.body.title,
+      body: req.body.body
+    }).then(function(results) {
+      res.end();
+    });
+  });
+
 };
 
 // // Get route for returning users of a specific category
