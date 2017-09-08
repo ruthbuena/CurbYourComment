@@ -1,5 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define('Post', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,14 +18,5 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     }
   });
-
-  Post.associate = function(models) {
-      Post.belongsTo(models.User, {
-        // foreignKey: {
-        //   allowNull: false
-        // }
-      });
-    };
-
   return Post;
 };
