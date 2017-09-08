@@ -75,12 +75,12 @@ $(document).ready(function() {
     deleteBtn.text("x");
     deleteBtn.addClass("delete btn btn-danger");
     var editBtn = $("<button>");
-    editBtn.text("EDIT");
-    editBtn.addClass("edit btn btn-info");
+    // editBtn.text("EDIT");
+    // editBtn.addClass("edit btn btn-info");
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostuser = $("<h5>");
-    newPostuser.text("Written by: user name display is in next activity when we learn joins!");
+    newPostuser.text("");
     newPostuser.css({
       float: "right",
       color: "blue",
