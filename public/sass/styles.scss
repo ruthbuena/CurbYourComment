@@ -25,6 +25,10 @@ button {
   margin-right: 50%;
 }
 
+#post {
+  padding-top: 80px;
+}
+
 #bar {
   color: $black;
   font: 50px;
@@ -32,7 +36,8 @@ button {
 
 ul {
   float: right;
-  padding-right: 250px;
+  padding-right: 100px;
+  padding-top: 65px;
   color: $black;
   font: 50px;
 }

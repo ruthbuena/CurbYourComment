@@ -22,6 +22,10 @@ button {
   margin-right: 50%;
 }
 
+#post {
+  padding-top: 80px;
+}
+
 #bar {
   color: #000000;
   font: 50px;
@@ -29,7 +33,8 @@ button {
 
 ul {
   float: right;
-  padding-right: 250px;
+  padding-right: 100px;
+  padding-top: 65px;
   color: #000000;
   font: 50px;
 }
