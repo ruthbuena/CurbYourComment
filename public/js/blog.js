@@ -137,7 +137,7 @@ $(document).ready(function() {
       "text-align": "center",
       "margin-top": "50px"
     });
-    messageh2.html("No posts yet" + partial + ", click <a href='/post" + query +
+    messageh2.html("No thoughts yet" + partial + ", click <a href='/post" + query +
       "'>here</a> to add a post.");
     blogContainer.append(messageh2);
   }

@@ -1,20 +1,23 @@
-/* #f5da6a */
-/* #f5da6a */
+@import "variables";
+@import "variables";
+@import "mixins";
+
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+
 form {
-  color: #d14348;
+  color: $red;
 }
 
 button {
-  color: #000000;
+  color: $black;
 }
 
 #sign-up {
-  color: #4285F4;
+  color: $googleblue;
 }
 
 .jumbotron.center {
-  border: #000000;
+  border: $black;
 }
 
 #larry {
@@ -23,19 +26,21 @@ button {
 }
 
 #bar {
-  color: #000000;
+  color: $black;
   font: 50px;
 }
 
 ul {
   float: right;
   padding-right: 250px;
-  color: #000000;
+  color: $black;
   font: 50px;
 }
 
 nav {
-  color: #000000;
+  color: $black;
 }
 
-/*# sourceMappingURL=styles.css.map */
+body {
+  // background-image: url("../assets/images/curb10.jpg");
+}
