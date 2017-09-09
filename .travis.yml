@@ -8,7 +8,7 @@ travis: {
   script: grunt travis,
   validate: true
   deploy:
-  provider: heroku,
-  api_key: 6dcb342e-b4f2-413c-ab51-b281bb527064,
+  provider: heroku
+  api_key: 6dcb342e-b4f2-413c-ab51-b281bb527064
   app: mysterious-mesa-34082
 }
