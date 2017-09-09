@@ -1,5 +1,4 @@
 /* #f5da6a */
-/* #f5da6a */
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
 form {
   color: #d14348;
@@ -26,13 +25,13 @@ button {
   padding-top: 80px;
 }
 
-#bar {
+#barhome {
+  float: right;
   color: #000000;
   font: 50px;
 }
 
-ul {
-  float: right;
+#bar {
   padding-right: 100px;
   padding-top: 65px;
   color: #000000;
@@ -41,6 +40,10 @@ ul {
 
 nav {
   color: #000000;
+}
+
+#demo {
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

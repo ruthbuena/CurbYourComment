@@ -1,5 +1,4 @@
 @import "variables";
-@import "variables";
 @import "mixins";
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
@@ -14,7 +13,9 @@ button {
 
 #sign-up {
   color: $googleblue;
+  // float: left;
 }
+
 
 .jumbotron.center {
   border: $black;
@@ -29,13 +30,16 @@ button {
   padding-top: 80px;
 }
 
-#bar {
+
+
+#barhome {
+  float: right;
   color: $black;
   font: 50px;
 }
 
-ul {
-  float: right;
+#bar {
+  // float: right;
   padding-right: 100px;
   padding-top: 65px;
   color: $black;
@@ -49,3 +53,31 @@ nav {
 body {
   // background-image: url("../assets/images/curb10.jpg");
 }
+
+#demo {
+  text-align: center;
+}
+
+// #demo{
+// 	font-family: sans-serif;
+// 	color: $black;
+// 	display: inline-block;
+// 	font-weight: 100;
+// 	text-align: center;
+// 	font-size: 30px;
+// }
+//
+// #demo > div{
+// 	padding: 10px;
+// 	border-radius: 3px;
+// 	background: $dkgray;
+// 	display: inline-block;
+//   align: center;
+// }
+//
+// #demo div > span{
+// 	padding: 15px;
+// 	border-radius: 3px;
+// 	background: $white;
+// 	display: inline-block;
+// }
