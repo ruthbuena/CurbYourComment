@@ -25,5 +25,8 @@ module.exports = function(app) {
   app.get('/post', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/post.html'))
   });
+  app.get('/login', function (req, res) {
+    res.render('login');
+  })
 
 };

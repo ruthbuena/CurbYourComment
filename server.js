@@ -6,6 +6,7 @@ const
   app = express(),
   PORT = process.env.PORT || 8080;
 
+var exphbs = require("express-handlebars");
 var cookieParser = require('cookie-parser');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
@@ -13,7 +14,15 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+// var routes = require('./routes/index');
+// var users = require('./routes/users');
+
 var db = require('./models');
+
+// View Engine
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', exphbs({defaultLayout:'layout'}));
+app.set('view engine', 'handlebars');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -73,8 +82,11 @@ require('./routing/apiRoutes.js')(app);
 require('./routing/htmlRoutes.js')(app);
 require('./routing/postRoutes.js')(app);
 
+// app.use('/', routes);
+// app.use('/users', users);
+
 db.sequelize.sync({
-  force: true
+  force: false
 }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
